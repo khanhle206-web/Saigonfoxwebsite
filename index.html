@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>🦊 SAIGONFOX MINECRAFT SERVER 🦊</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url("https://i.ibb.co/FLY7TLdS/fox-bg.jpg") center/cover no-repeat fixed;
+      color: #fff;
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    .overlay {
+      background-color: rgba(0,0,0,0.7);
+      min-height: 100vh;
+      padding: 40px 20px;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    /* Logo bay lên mượt */
+    .logo {
+      width: 180px;
+      animation: float 3s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 15px #ff7f27);
+    }
+
+    @keyframes float {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-10px); }
+    }
+
+    /* Tiêu đề LED đổi màu */
+    h1 {
+      font-size: 2.8em;
+      font-weight: 700;
+      margin-top: 25px;
+      background: linear-gradient(270deg, #ff7f27, #ffea00, #ff7f27, #ffea00);
+      background-size: 800% 800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rgbText 5s ease infinite;
+    }
+
+    @keyframes rgbText {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    p.subtitle {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #ffcc80;
+      text-shadow: 0 0 10px #ff7f27;
+    }
+
+    /* Nút RGB */
+    .button-container {
+      margin-top: 35px;
+    }
+
+    button {
+      position: relative;
+      margin: 10px;
+      padding: 14px 28px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: 3px solid transparent;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      z-index: 1;
+    }
+
+    button::before {
+      content: "";
+      position: absolute;
+      top: -2px; left: -2px; right: -2px; bottom: -2px;
+      z-index: -1;
+      background: linear-gradient(270deg, red, orange, yellow, lime, cyan, blue, violet, red);
+      background-size: 400%;
+      border-radius: 12px;
+      animation: rgbBorder 6s linear infinite;
+    }
+
+    @keyframes rgbBorder {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: rgba(255,127,39,0.3);
+      box-shadow: 0 0 15px #ff7f27;
+    }
+
+    /* Nội dung mượt */
+    .content {
+      display: none;
+      margin: 30px auto;
+      width: 85%;
+      max-width: 700px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 15px;
+      padding: 25px;
+      text-align: left;
+      line-height: 1.8;
+      color: #fff;
+      animation: fadeIn 0.6s ease forwards;
+      box-shadow: 0 0 20px rgba(255,127,39,0.4);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    img.rules {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    a {
+      color: #ffcc80;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #ff7f27;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay">
+    <img class="logo" src="https://i.ibb.co/RkFWY9x8/logo.png" alt="SaigonFox Logo">
+    <h1>🦊 SAIGONFOX MINECRAFT SERVER 🦊</h1>
+    <p class="subtitle">Chào mừng các bạn đã đến với đại gia đình <b>cáo con</b> !</p>
+
+    <div class="button-container">
+      <button onclick="show('messenger')">📩 BOX MESSENGER</button>
+      <button onclick="show('ip')">🌍 IP SERVER</button>
+      <button onclick="show('rules')">📜 LUẬT LỆ SERVER</button>
+    </div>
+
+    <div id="messenger" class="content">
+      <h2>📩 BOX MESSENGER</h2>
+      <p>👉 Tham gia box messenger là <b>bắt buộc</b> để nhận thông báo & hỗ trợ.</p>
+      <p><a href="https://m.me/j/Aba50PX8h7tBfI_N/">👉 Bấm vào đây để vào box Messenger</a></p>
+    </div>
+
+    <div id="ip" class="content">
+      <h2>🌍 IP SERVER</h2>
+      <p><b>IP (PC - Java Edition):</b> saigonfox.id.vn:25602<br>
+      <b>IP (PE - Bedrock Edition):</b> saigonfox.id.vn<br>
+      <b>Port:</b> 25602</p>
+    </div>
+
+    <div id="rules" class="content">
+      <h2>📜 LUẬT LỆ SERVER</h2>
+      <p>Dưới đây là toàn bộ nội quy của server. Hãy đọc kỹ để tránh vi phạm!</p>
+      <img src="https://i.ibb.co/pBM6jqBj/rules.png" alt="Luật lệ server" class="rules">
+    </div>
+  </div>
+
+  <script>
+    function show(id) {
+      document.querySelectorAll('.content').forEach(div => {
+        div.style.display = 'none';
+        div.style.opacity = 0;
+      });
+      const target = document.getElementById(id);
+      target.style.display = 'block';
+      setTimeout(() => target.style.opacity = 1, 50);
+    }
+  </script>
+</body>
+</html>
