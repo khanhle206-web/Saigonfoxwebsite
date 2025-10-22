@@ -13,6 +13,28 @@
       color: #fff;
       overflow-x: hidden;
       text-align: center;
+      position: relative;
+    }
+
+    /* Viền RGB quanh web */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 5px solid transparent;
+      border-radius: 25px;
+      background: linear-gradient(270deg, red, orange, yellow, lime, cyan, blue, violet, red);
+      background-size: 600% 600%;
+      animation: borderRGB 8s linear infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes borderRGB {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .overlay {
@@ -20,18 +42,21 @@
       min-height: 100vh;
       padding: 40px 20px;
       animation: fadeIn 2s ease forwards;
+      position: relative;
+      z-index: 2;
     }
 
-    /* Logo bay lên mượt */
+    /* Logo */
     .logo {
       width: 180px;
+      border-radius: 50%;
       animation: float 3s ease-in-out infinite alternate;
-      filter: drop-shadow(0 0 15px #ff7f27);
+      box-shadow: 0 0 25px #ff7f27;
     }
 
     @keyframes float {
       from { transform: translateY(0px); }
-      to { transform: translateY(-10px); }
+      to { transform: translateY(-12px); }
     }
 
     /* Tiêu đề LED đổi màu */
@@ -102,7 +127,7 @@
       box-shadow: 0 0 15px #ff7f27;
     }
 
-    /* Nội dung mượt */
+    /* Nội dung */
     .content {
       display: none;
       margin: 30px auto;
@@ -125,8 +150,9 @@
 
     img.rules {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 15px;
       margin-top: 10px;
+      box-shadow: 0 0 25px rgba(255,127,39,0.5);
     }
 
     a {
@@ -148,6 +174,7 @@
 
     <div class="button-container">
       <button onclick="show('messenger')">📩 BOX MESSENGER</button>
+      <button onclick="show('discord')">💬 LINK DISCORD</button>
       <button onclick="show('ip')">🌍 IP SERVER</button>
       <button onclick="show('rules')">📜 LUẬT LỆ SERVER</button>
     </div>
@@ -156,6 +183,12 @@
       <h2>📩 BOX MESSENGER</h2>
       <p>👉 Tham gia box messenger là <b>bắt buộc</b> để nhận thông báo & hỗ trợ.</p>
       <p><a href="https://m.me/j/Aba50PX8h7tBfI_N/">👉 Bấm vào đây để vào box Messenger</a></p>
+    </div>
+
+    <div id="discord" class="content">
+      <h2>💬 LINK DISCORD</h2>
+      <p>Tham gia Discord chính thức của server để trò chuyện, cập nhật, và event nhé!</p>
+      <p><a href="https://discord.gg/PpYusaEvBx">👉 Bấm vào đây để vào Discord</a></p>
     </div>
 
     <div id="ip" class="content">
@@ -167,8 +200,8 @@
 
     <div id="rules" class="content">
       <h2>📜 LUẬT LỆ SERVER</h2>
-      <p>Dưới đây là toàn bộ nội quy của server. Hãy đọc kỹ để tránh vi phạm!</p>
-      <img src="https://i.ibb.co/pBM6jqBj/rules.png" alt="Luật lệ server" class="rules">
+      <p>Đọc kỹ nội quy để không bị cáo cắn nhầm 😎</p>
+      <img src="https://i.postimg.cc/WDJ8QH6V/rules.png" alt="Luật lệ server" class="rules">
     </div>
   </div>
 
